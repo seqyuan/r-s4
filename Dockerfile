@@ -14,18 +14,16 @@ RUN apt-get update && \
 		apt-get install -y \
 		libssl-dev \
 		gdebi-core \
-		libcurl4-gnutls-dev \
+		#libcurl4-gnutls-dev \
 		libcairo2-dev \
 		libxt-dev \
 		xtail \
-		libcurl4-openssl-dev \
 		build-essential \
 		libxml2-dev \
 		libcurl4-openssl-dev \
 		libhdf5-dev \
 		libudunits2-dev \
-		imagemagick \
-		wget && \
+		imagemagick && \
 		if [ -e /bin/sh ];then rm /bin/sh ; fi && \
 		if [ -e /bin/bash ];then ln -s /bin/bash /bin/sh ; fi
 
