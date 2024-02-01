@@ -3,7 +3,7 @@ FROM continuumio/miniconda3:latest
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-RUN conda create -name seurat4 python=3.8.5 r-base=4.3.1 -y
+RUN conda install mamba && mamba create -n seurat4 python=3.8.5 r-base=4.3.1
 
 SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 # 成功激活
