@@ -3,11 +3,11 @@ FROM continuumio/miniconda3:latest
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-RUN conda install mamba && mamba create -n seurat4 python=3.8.5 r-base=4.3.1
+#RUN conda install mamba && mamba create -n seurat4 python=3.8.5 r-base=4.3.1
 
-SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
+#SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 # 成功激活
-RUN  conda activate rs4
+#RUN  conda activate rs4
 
 
 RUN apt-get update && \
@@ -29,6 +29,8 @@ RUN apt-get update && \
 		if [ -e /bin/sh ];then rm /bin/sh ; fi && \
 		if [ -e /bin/bash ];then ln -s /bin/bash /bin/sh ; fi
 
+RUN conda install r-base=4.3.1
+
 RUN R -e "install.packages(c('BiocManager', 'devtools', 'remotes', 'ggplot2', 'dplyr', 'BPCells', 'presto', 'glmGamPoi', 'rjson', 'Matrix', 'viridis', 'reticulate', 'cowplot'))" && \
 		R -e "remotes::install_version('Seurat', '4.4.0', repos = c("https://satijalab.r-universe.dev", getOption('repos')))" && \
 		R -e "remotes::install_github('satijalab/seurat-data', quiet = TRUE)" && \
@@ -40,5 +42,5 @@ RUN R -e "install.packages(c('BiocManager', 'devtools', 'remotes', 'ggplot2', 'd
 #SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 #RUN conda install -y mamba
 
-CMD ["conda", "run", "-n", "rs4", "/bin/bash"]
+#CMD ["conda", "run", "-n", "rs4", "/bin/bash"]
 
