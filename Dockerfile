@@ -3,7 +3,7 @@ FROM continuumio/miniconda3:latest
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-RUN conda create -n rs4  python=3.8.7 r=4.3.2
+RUN conda create -n rs4  python=3.8.7 r-base=4.3.2
 
 SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 # 成功激活
