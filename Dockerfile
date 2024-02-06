@@ -33,7 +33,7 @@ RUN which R && R -e "install.packages(c('BiocManager', 'devtools'))"
 
 RUN R -e "install.packages(c('BiocManager', 'devtools', 'remotes', 'ggplot2', 'dplyr', 'BPCells', 'presto', 'glmGamPoi', 'rjson', 'Matrix', 'viridis', 'reticulate', 'cowplot'))"
 
-RUN R -e "remotes::install_version('Seurat', '4.4.0', repos = c("https://satijalab.r-universe.dev", getOption('repos')))" && \
+RUN R -e "remotes::install_version('Seurat', '4.1.4', repos = c("https://satijalab.r-universe.dev", getOption('repos')))" && \
 		R -e "remotes::install_github('satijalab/seurat-data', quiet = TRUE)" && \
 		R -e "remotes::install_github('satijalab/azimuth', quiet = TRUE)" && \
 		R -e "remotes::install_github('satijalab/seurat-wrappers', quiet = TRUE)" && \
