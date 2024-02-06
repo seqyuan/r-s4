@@ -30,6 +30,8 @@ RUN apt-get update && \
 RUN conda install r-base=4.3.1
 RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile && \
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile
+
+RUN conda install r-devtools && conda install r-BiocManager && conda install r-remotes
 ADD install_cmd.R /tmp/
 RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
 
