@@ -29,16 +29,16 @@ RUN apt-get update && \
 
 RUN conda install r-base=4.3.1
 
-RUN which R && R -e "install.packages(c('BiocManager', 'devtools'))"
+RUN Rscript -e "install.packages(c('BiocManager', 'devtools'))"
 
-RUN R -e "install.packages(c('BiocManager', 'devtools', 'remotes', 'ggplot2', 'dplyr', 'BPCells', 'presto', 'glmGamPoi', 'rjson', 'Matrix', 'viridis', 'reticulate', 'cowplot'))"
+RUN Rscript -e "install.packages(c('BiocManager', 'devtools', 'remotes', 'ggplot2', 'dplyr', 'BPCells', 'presto', 'glmGamPoi', 'rjson', 'Matrix', 'viridis', 'reticulate', 'cowplot'))"
 
-RUN R -e "remotes::install_version('Seurat', '4.1.4', repos = c("https://satijalab.r-universe.dev", getOption('repos')))" && \
-		R -e "remotes::install_github('satijalab/seurat-data', quiet = TRUE)" && \
-		R -e "remotes::install_github('satijalab/azimuth', quiet = TRUE)" && \
-		R -e "remotes::install_github('satijalab/seurat-wrappers', quiet = TRUE)" && \
-		R -e "remotes::install_github('mojaveazure/seurat-disk')" && \
-		R -e "remotes::install_github('YuLab-SMU/clusterProfiler', upgrade='never')"
+RUN Rscript -e "remotes::install_version('Seurat', '4.1.4', repos = c("https://satijalab.r-universe.dev", getOption('repos')))" && \
+		Rscript -e "remotes::install_github('satijalab/seurat-data', quiet = TRUE)" && \
+		Rscript -e "remotes::install_github('satijalab/azimuth', quiet = TRUE)" && \
+		Rscript -e "remotes::install_github('satijalab/seurat-wrappers', quiet = TRUE)" && \
+		Rscript -e "remotes::install_github('mojaveazure/seurat-disk')" && \
+		Rscript -e "remotes::install_github('YuLab-SMU/clusterProfiler', upgrade='never')"
 		
 #SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 #RUN conda install -y mamba
