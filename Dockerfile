@@ -31,14 +31,14 @@ RUN conda install r-base=4.3.1
 RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile && \
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile && \
 		conda install r-biocmanager && \
-		bioconda::bioconductor-deseq2 && \
+		bioconductor-deseq2 && \
 		r-devtools && \
 		r-remoter && \
 		r-ggplot2 && \
 		r-dplyr  && \
 		r-bpcells && \
 		r-presto && \
-		bioconda::bioconductor-glmgampoi && \
+		bioconductor-glmgampoi && \
 		r-rjson && \
 		r-viridis && \
 		r-reticulate && \
@@ -57,14 +57,14 @@ RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor
 		bioconductor-org.hs.eg.db && \
 		bioconductor-org.mm.eg.db && \
 		bioconductor-reactomepa && \
-		bioconda::bioconductor-msigdbr && \
-		bioconda::bioconductor-dose && \
-		bioconda::bioconductor-enrichplot && \
-		bioconda::bioconductor-degseq && \
-		bioconda::bioconductor-limma && \
-		bioconda::bioconductor-gsva && \
-		bioconda::bioconductor-complexheatmap && \
-		bioconda::bioconductor-clusterprofiler
+		bioconductor-msigdbr && \
+		bioconductor-dose && \
+		bioconductor-enrichplot && \
+		bioconductor-degseq && \
+		bioconductor-limma && \
+		bioconductor-gsva && \
+		bioconductor-complexheatmap && \
+		bioconductor-clusterprofiler
 
 ADD install_cmd.R /tmp/
 RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
