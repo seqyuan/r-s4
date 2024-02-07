@@ -32,7 +32,7 @@ RUN conda install r-base=4.3.1
 ADD install_cmd.R /tmp/
 ADD add_mirror.sh /tmp/
 
-RUN sh add_mirror.sh && \
+RUN sh /tmp/add_mirror.sh && \
 		/opt/conda/bin/Rscript /tmp/install_cmd.R
 
 
