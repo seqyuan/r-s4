@@ -31,40 +31,40 @@ RUN conda install r-base=4.3.1
 RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile && \
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile && \
 		conda install r-biocmanager && \
-		bioconductor-deseq2 && \
-		r-devtools && \
-		r-remoter && \
-		r-ggplot2 && \
-		r-dplyr  && \
-		r-bpcells && \
-		r-presto && \
-		bioconductor-glmgampoi && \
-		r-rjson && \
-		r-viridis && \
-		r-reticulate && \
-		r-cowplot && \
-		r-reshape2 && \
-		r-ggsci && \
-		r-rcolorbrewer && \
-		r-patchwork && \
-		r-pheatmap && \
-		r-ggpubr && \
-		r-ggalluvial && \
-		r-harmony && \
-		r-configr && \
-		r-scales && \
-		r-gridextra && \
-		bioconductor-org.hs.eg.db && \
-		bioconductor-org.mm.eg.db && \
-		bioconductor-reactomepa && \
-		bioconductor-msigdbr && \
-		bioconductor-dose && \
-		bioconductor-enrichplot && \
-		bioconductor-degseq && \
-		bioconductor-limma && \
-		bioconductor-gsva && \
-		bioconductor-complexheatmap && \
-		bioconductor-clusterprofiler
+		conda install bioconductor-deseq2 && \
+		conda install r-devtools && \
+		conda install r-remoter && \
+		conda install r-ggplot2 && \
+		conda install r-dplyr && \
+		conda install r-bpcells && \
+		conda install r-presto && \
+		conda install bioconductor-glmgampoi && \
+		conda install r-rjson && \
+		conda install r-viridis && \
+		conda install r-reticulate && \
+		conda install r-cowplot && \
+		conda install r-reshape2 && \
+		conda install r-ggsci && \
+		conda install r-rcolorbrewer && \
+		conda install r-patchwork && \
+		conda install r-pheatmap && \
+		conda install r-ggpubr && \
+		conda install r-ggalluvial && \
+		conda install r-harmony && \
+		conda install r-configr && \
+		conda install r-scales && \
+		conda install r-gridextra && \
+		conda install bioconductor-org.hs.eg.db && \
+		conda install bioconductor-org.mm.eg.db && \
+		conda install bioconductor-reactomepa && \
+		conda install bioconductor-msigdbr && \
+		conda install bioconductor-dose && \
+		conda install bioconductor-enrichplot && \
+		conda install bioconductor-degseq && \
+		conda install bioconductor-limma && \
+		conda install bioconductor-gsva && \
+		conda install bioconductor-complexheatmap && \
+		conda install bioconductor-clusterprofiler
 
 ADD install_cmd.R /tmp/
 RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
