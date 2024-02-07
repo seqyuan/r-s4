@@ -30,21 +30,22 @@ RUN apt-get update && \
 RUN conda install r-base=4.3.1
 RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile && \
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile && \
-		conda install r-devtools && \
-		conda-forge::r-biocmanager && \
+		conda install r-biocmanager && \
+		bioconda::bioconductor-deseq2 && \
+		r-devtools && \
 		r-remoter && \
 		r-ggplot2 && \
 		r-dplyr  && \
-		rschauner::r-bpcells && \
+		r-bpcells && \
 		r-presto && \
-		bioconda::bioconductor-glmgampoi	&& \
+		bioconda::bioconductor-glmgampoi && \
 		r-rjson && \
 		r-viridis && \
 		r-reticulate && \
 		r-cowplot && \
 		r-reshape2 && \
 		r-ggsci && \
-		conda-forge::r-rcolorbrewer && \
+		r-rcolorbrewer && \
 		r-patchwork && \
 		r-pheatmap && \
 		r-ggpubr && \
@@ -52,14 +53,13 @@ RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor
 		r-harmony && \
 		r-configr && \
 		r-scales && \
-		conda-forge::r-gridextra && \
-		bioconda::bioconductor-org.hs.eg.db && \
-		bioconda::bioconductor-org.mm.eg.db && \
-		bioconda::bioconductor-reactomepa && \
+		r-gridextra && \
+		bioconductor-org.hs.eg.db && \
+		bioconductor-org.mm.eg.db && \
+		bioconductor-reactomepa && \
 		bioconda::bioconductor-msigdbr && \
 		bioconda::bioconductor-dose && \
 		bioconda::bioconductor-enrichplot && \
-		bioconda::bioconductor-deseq2 && \
 		bioconda::bioconductor-degseq && \
 		bioconda::bioconductor-limma && \
 		bioconda::bioconductor-gsva && \
