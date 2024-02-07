@@ -13,7 +13,7 @@ jobs:
     permissions:
       packages: write
     env:
-      IMAGE_NAME: r-s4
+      IMAGE_NAME: seurat4
     steps:
       - name: "Build:checkout"
         uses: actions/checkout@v2

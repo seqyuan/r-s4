@@ -1,5 +1,5 @@
 remotes::install_github("immunogenomics/presto", upgrade='never')
-remotes::install_version("Matrix",version = "1.6-1.1", INSTALL_opts = '--no-lock', force=TRUE, upgrade='never'
+remotes::install_version("Matrix",version = "1.6-1.1", INSTALL_opts = '--no-lock', force=TRUE, upgrade='never')
 remotes::install_version("SeuratObject", "4.1.4", repos = c("https://satijalab.r-universe.dev", getOption("repos")), upgrade='never')
 remotes::install_version(package = 'Seurat', version = package_version('4.4.0'), upgrade='never')
 #remotes::install_github('satijalab/seurat-data', quiet = TRUE)
