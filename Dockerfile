@@ -30,46 +30,10 @@ RUN apt-get update && \
 RUN conda install r-base=4.3.1
 
 ADD install_cmd.R /tmp/
-ADD add_mirror.sh /tmp/add_mirror.sh
+ADD add_mirror.sh /tmp/
 
-RUN sh /tmp/add_mirror.sh && \
-		conda install r-biocmanager && \
-		conda install bioconductor-deseq2 && \
-		conda install r-devtools && \
-		conda install r-remoter && \
-		conda install r-ggplot2 && \
-		conda install r-dplyr && \
-		conda install r-bpcells && \
-		conda install r-presto && \
-		conda install bioconductor-glmgampoi && \
-		conda install r-rjson && \
-		conda install r-viridis && \
-		conda install r-reticulate && \
-		conda install r-cowplot && \
-		conda install r-reshape2 && \
-		conda install r-ggsci && \
-		conda install r-rcolorbrewer && \
-		conda install r-patchwork && \
-		conda install r-pheatmap && \
-		conda install r-ggpubr && \
-		conda install r-ggalluvial && \
-		conda install r-harmony && \
-		conda install r-configr && \
-		conda install r-scales && \
-		conda install r-gridextra && \
-		conda install bioconductor-org.hs.eg.db && \
-		conda install bioconductor-org.mm.eg.db && \
-		conda install bioconductor-reactomepa && \
-		conda install bioconductor-msigdbr && \
-		conda install bioconductor-dose && \
-		conda install bioconductor-enrichplot && \
-		conda install bioconductor-degseq && \
-		conda install bioconductor-limma && \
-		conda install bioconductor-gsva && \
-		conda install bioconductor-complexheatmap && \
-		conda install bioconductor-clusterprofiler
-
-RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
+RUN sh add_mirror.sh && \
+		/opt/conda/bin/Rscript /tmp/install_cmd.R
 
 
 		
