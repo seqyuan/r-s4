@@ -6,4 +6,6 @@ remotes::install_github('satijalab/azimuth', quiet = TRUE)
 remotes::install_github('satijalab/seurat-wrappers', quiet = TRUE)
 remotes::install_github('mojaveazure/seurat-disk')
 #remotes::install_github('YuLab-SMU/clusterProfiler', upgrade='never')
+devtools::install_github('junjunlab/scRNAtoolVis')
+devtools::install_github("sajuukLyu/ggunchull", type = "source")
 
