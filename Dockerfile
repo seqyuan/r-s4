@@ -29,9 +29,42 @@ RUN apt-get update && \
 
 RUN conda install r-base=4.3.1
 RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile && \
-		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile
+		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile && \
+		conda install r-devtools && \
+		r-BiocManager && \
+		r-remoter && \
+		r-ggplot2 && \
+		r-dplyr  && \
+		r-BPCells && \
+		r-presto && \
+		r-glmGamPoi	&& \
+		r-rjson && \
+		r-viridis && \
+		r-reticulate && \
+		r-cowplot && \
+		r-reshape2 && \
+		r-ggsci && \
+		r-RColorBrewer && \
+		r-patchwork && \
+		r-pheatmap && \
+		r-ggpubr && \
+		r-ggalluvial && \
+		r-harmony && \
+		r-configr && \
+		r-scales && \
+		r-gridExtra && \
+		bioconda::bioconductor-org.hs.eg.db && \
+		bioconda::bioconductor-org.Mm.eg.db && \
+		bioconda::bioconductor-ReactomePA && \
+		bioconda::bioconductor-msigdbr && \
+		bioconda::bioconductor-DOSE && \
+		bioconda::bioconductor-enrichplot && \
+		bioconda::bioconductor-DESeq2 && \
+		bioconda::bioconductor-DEGseq && \
+		bioconda::bioconductor-limma && \
+		bioconda::bioconductor-gsva && \
+		bioconda::bioconductor-complexheatmap
 
-RUN conda install r-devtools && conda install r-BiocManager && conda install r-remotes
 ADD install_cmd.R /tmp/
 RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
 
