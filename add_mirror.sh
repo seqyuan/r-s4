@@ -11,13 +11,13 @@ conda config --add channels bioconda
 echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile
 echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile
 
+conda install -y -c conda-forge r-curl
 conda install -y -c conda-forge r-biocmanager
 conda install -y -c bioconda bioconductor-deseq2
 conda install -y -c conda-forge r-devtools
 conda install -y -c conda-forge r-ggplot2
 conda install -y -c conda-forge r-dplyr
 conda install -y -c rschauner r-bpcells
-conda install -y -c conda-forge r-presto
 conda install -y -c bioconda bioconductor-glmgampoi
 conda install -y -c conda-forge r-rjson
 conda install -y -c conda-forge r-viridis
@@ -37,7 +37,7 @@ conda install -y -c conda-forge r-gridextra
 conda install -y -c bioconda bioconductor-org.hs.eg.db
 conda install -y -c bioconda bioconductor-org.mm.eg.db
 conda install -y -c bioconda bioconductor-reactomepa
-conda install -y -c bioconda bioconductor-msigdbr
+conda install -y -c conda-forge r-msigdbr
 conda install -y -c bioconda bioconductor-dose
 conda install -y -c bioconda bioconductor-enrichplot
 conda install -y -c bioconda bioconductor-degseq
