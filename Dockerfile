@@ -31,20 +31,20 @@ RUN conda install r-base=4.3.1
 RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" >> ~/.Rprofile && \
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile && \
 		conda install r-devtools && \
-		r-BiocManager && \
+		conda-forge::r-biocmanager && \
 		r-remoter && \
 		r-ggplot2 && \
 		r-dplyr  && \
-		r-BPCells && \
+		rschauner::r-bpcells && \
 		r-presto && \
-		r-glmGamPoi	&& \
+		bioconda::bioconductor-glmgampoi	&& \
 		r-rjson && \
 		r-viridis && \
 		r-reticulate && \
 		r-cowplot && \
 		r-reshape2 && \
 		r-ggsci && \
-		r-RColorBrewer && \
+		conda-forge::r-rcolorbrewer && \
 		r-patchwork && \
 		r-pheatmap && \
 		r-ggpubr && \
@@ -52,18 +52,19 @@ RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor
 		r-harmony && \
 		r-configr && \
 		r-scales && \
-		r-gridExtra && \
+		conda-forge::r-gridextra && \
 		bioconda::bioconductor-org.hs.eg.db && \
-		bioconda::bioconductor-org.Mm.eg.db && \
-		bioconda::bioconductor-ReactomePA && \
+		bioconda::bioconductor-org.mm.eg.db && \
+		bioconda::bioconductor-reactomepa && \
 		bioconda::bioconductor-msigdbr && \
-		bioconda::bioconductor-DOSE && \
+		bioconda::bioconductor-dose && \
 		bioconda::bioconductor-enrichplot && \
-		bioconda::bioconductor-DESeq2 && \
-		bioconda::bioconductor-DEGseq && \
+		bioconda::bioconductor-deseq2 && \
+		bioconda::bioconductor-degseq && \
 		bioconda::bioconductor-limma && \
 		bioconda::bioconductor-gsva && \
-		bioconda::bioconductor-complexheatmap
+		bioconda::bioconductor-complexheatmap && \
+		bioconda::bioconductor-clusterprofiler
 
 ADD install_cmd.R /tmp/
 RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
