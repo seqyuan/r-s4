@@ -1,4 +1,4 @@
-Sys.setenv(GITHUB_PAT = "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")
+Sys.setenv(GITHUB_PAT = "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")
 remotes::install_github("immunogenomics/presto", upgrade='never')
 remotes::install_version("Matrix",version = "1.6-1.1", INSTALL_opts = '--no-lock', force=TRUE, upgrade='never')
 remotes::install_version("SeuratObject", "4.1.4", repos = c("https://satijalab.r-universe.dev", getOption("repos")), upgrade='never')

@@ -9,9 +9,12 @@ ENV LANG en_US.UTF-8
 # 成功激活
 #RUN  conda activate rs4
 
-ADD depend.sh /tmp/
+#ADD depend.sh /tmp/
 ADD install_cmd.R /tmp/
-RUN sh /tmp/depend.sh && /opt/conda/bin/Rscript /tmp/install_cmd.R
+RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
+
+
+#RUN sh /tmp/depend.sh && /opt/conda/bin/Rscript /tmp/install_cmd.R
 
 #SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 #RUN conda install -y mamba
