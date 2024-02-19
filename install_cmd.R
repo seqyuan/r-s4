@@ -1,4 +1,4 @@
-Sys.setenv(GITHUB_PAT = "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")
+#Sys.setenv(GITHUB_PAT = "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")
 print('immunogenomics/presto')
 remotes::install_github("immunogenomics/presto", upgrade='never')
 remotes::install_version("Matrix",version = "1.6-1.1", INSTALL_opts = '--no-lock', force=TRUE, upgrade='never')
