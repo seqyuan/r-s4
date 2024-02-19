@@ -35,5 +35,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true # Will only build if this is not here
+          secrets: |
+            "GIT_PAT=${{ secrets.R_LIM }}"   
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:1.0

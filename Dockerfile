@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 
 #ADD depend.sh /tmp/
 ADD install_cmd.R /tmp/
-RUN /opt/conda/bin/Rscript /tmp/install_cmd.R
+RUN echo GIT_PAT >>~/.Renviron && /opt/conda/bin/Rscript /tmp/install_cmd.R
 
 
 #RUN sh /tmp/depend.sh && /opt/conda/bin/Rscript /tmp/install_cmd.R
