@@ -11,7 +11,8 @@ ENV LANG en_US.UTF-8
 
 #ADD depend.sh /tmp/
 ADD install_cmd.R /tmp/
-RUN echo GIT_PAT >>~/.Renviron && /opt/conda/bin/Rscript /tmp/install_cmd.R
+RUN --mount=type=secret,id=github_token \
+  cat /run/secrets/GIT_PAT >>~/.Renviron && /opt/conda/bin/Rscript /tmp/install_cmd.R
 
 
 #RUN sh /tmp/depend.sh && /opt/conda/bin/Rscript /tmp/install_cmd.R
