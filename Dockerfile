@@ -1,7 +1,7 @@
 FROM ghcr.io/seqyuan/bior-base:1.0
 
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
+#ENV LC_ALL en_US.UTF-8
+#ENV LANG en_US.UTF-8
 
 #RUN conda install mamba && mamba create -n seurat4 python=3.8.5 r-base=4.3.1
 
