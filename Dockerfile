@@ -10,16 +10,16 @@ FROM ghcr.io/seqyuan/bior-base:1.0
 #RUN  conda activate rs4
 
 #ADD depend.sh /tmp/
+
 ADD install_cmd.R /tmp/
 RUN --mount=type=secret,id=GIT_PAT \
-  cat /run/secrets/GIT_PAT | xargs echo GITHUB_PAT= >>~/.Renviron && /opt/conda/bin/Rscript /tmp/install_cmd.R
-
-
-#RUN sh /tmp/depend.sh && /opt/conda/bin/Rscript /tmp/install_cmd.R
+  cat /run/secrets/GIT_PAT | xargs echo GITHUB_PAT= >>~/.Renviron && \
+  echo "options(BioC_mirror='https://mirrors.ustc.edu.cn/bioc/')" >> ~/.Rprofile && \
+  echo "options('repos' = c(CRAN='https://cloud.r-project.org/'))" >> ~/.Rprofile && \
+  /opt/conda/bin/Rscript /tmp/install_cmd.R
 
 #SHELL ["conda", "run", "-n", "rs4", "/bin/bash", "-c"]
 #RUN conda install -y mamba
 
 #CMD ["conda", "run", "-n", "rs4", "/bin/bash"]
-
 
