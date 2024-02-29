@@ -1,4 +1,6 @@
 #Sys.setenv(GITHUB_PAT = "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")
+print('scWGCNA')
+devtools::install_github("cferegrino/scWGCNA", ref="main", upgrade='never')
 print('immunogenomics/presto')
 remotes::install_github("immunogenomics/presto", upgrade='never')
 print('Matrix')
